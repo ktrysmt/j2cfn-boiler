@@ -1,0 +1,73 @@
+SampleAdministrator:
+  Type: 'AWS::IAM::Role'
+  Properties: 
+    RoleName: 'sample-power-user'
+    Path: '/'
+    AssumeRolePolicyDocument: 
+      Version: '2012-10-17'
+      Statement: 
+        - Effect: 'Allow'
+          Principal: 
+            AWS: 'arn:aws:iam::999999999999:root'
+          Action: 
+            - 'sts:AssumeRole'
+          Condition: 
+            Bool: 
+              'aws:MultiFactorAuthPresent': 'true'
+
+SampleOperatorUser:
+  Type: 'AWS::IAM::Role'
+  Properties: 
+    RoleName: 'sample-operator-user'
+    Path: '/'
+    AssumeRolePolicyDocument: 
+      Version: '2012-10-17'
+      Statement: 
+        - Effect: 'Allow'
+          Principal: 
+            AWS: 'arn:aws:iam::999999999999:root'
+          Action: 
+            - 'sts:AssumeRole'
+          Condition: 
+            Bool: 
+              'aws:MultiFactorAuthPresent': 'true'
+
+SampleReadonlyUser:
+  Type: 'AWS::IAM::Role'
+  Properties: 
+    RoleName: 'sample-readonly-user'
+    Path: '/'
+    AssumeRolePolicyDocument: 
+      Version: '2012-10-17'
+      Statement: 
+        - Effect: 'Allow'
+          Principal: 
+            AWS: 'arn:aws:iam::999999999999:root'
+          Action: 
+            - 'sts:AssumeRole'
+          Condition: 
+            Bool: 
+              'aws:MultiFactorAuthPresent': 'true'
+
+UserRoleA:
+  Type: 'AWS::IAM::Role'
+  Properties: 
+    RoleName: 'user-role-A'
+    Path: '/'
+    ManagedPolicyArns:
+    - 'arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly'
+    AssumeRolePolicyDocument: 
+      Version: '2012-10-17'
+      Statement: 
+        - Effect: 'Allow'
+          Principal: 
+            Service: 'ec2.amazonaws.com'
+          Action: 
+            - 'sts:AssumeRole'
+UserRoleAInstanceProfile: 
+  Type: "AWS::IAM::InstanceProfile"
+  Properties: 
+    InstanceProfileName: "user-role-A-instance-profile"
+    Path: "/"
+    Roles: 
+      - !Ref "UserRoleA"

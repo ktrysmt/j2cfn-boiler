@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: ''
+
+# Parameters:
+  # nothing.
+
+Resources:
+
+  # User
+  {% filter indent(2) %}{% include "./tmpl.user.yaml.j2" %}{% endfilter %}
+
+  # Group
+  {% filter indent(2) %}{% include "./tmpl.group.yaml.j2" %}{% endfilter %}
+  
+  # Addition of user to group
+  {% filter indent(2) %}{% include "./tmpl.addition.yaml.j2" %}{% endfilter %}
+
+  # ManagedPolicy
+  {% filter indent(2) %}{% include "./tmpl.managed-policy.yaml.j2" %}{% endfilter %}
+
+  # Role
+  {% filter indent(2) %}{% include "./tmpl.role.yaml.j2" %}{% endfilter %}
+  
+  # Inline Policy
+  {% filter indent(2) %}{% include "./tmpl.inline-policy.yaml.j2" %}{% endfilter %}
+  

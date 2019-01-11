@@ -1,0 +1,6 @@
+{
+    "Capabilities": [
+        "CAPABILITY_NAMED_IAM"
+    ],
+    "ChangeSetType": "UPDATE"
+}

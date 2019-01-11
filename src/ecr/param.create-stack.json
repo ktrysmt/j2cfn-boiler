@@ -1,0 +1,8 @@
+{
+    "OnFailure": "ROLLBACK",
+    "EnableTerminationProtection": true,
+    "Capabilities": [
+      "CAPABILITY_IAM",
+      "CAPABILITY_NAMED_IAM"
+    ]
+}

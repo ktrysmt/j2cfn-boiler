@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "cfn-lint": "^1.5.1"
+  }
+}

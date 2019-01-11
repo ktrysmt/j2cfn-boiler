@@ -1,0 +1,20 @@
+SampleRepository: 
+  Type: "AWS::ECR::Repository"
+  Properties: 
+    RepositoryName: "sample"
+    RepositoryPolicyText: 
+      Version: "2012-10-17"
+      Statement: 
+        - Effect: Allow
+          Principal: 
+            AWS: 
+              - !Sub "arn:aws:iam::${AWS::AccountId}:role/user-role-A"
+          Action: 
+            {% filter indent(12) %}{% include "./tmpl.action-pullpush.yaml.j2" %}{% endfilter %} 
+        - Effect: Allow
+          Principal: 
+            AWS: 
+              - !Sub "arn:aws:iam::${AWS::AccountId}:role/sample-instance-profile-role-X"
+          Action: 
+            {% filter indent(12) %}{% include "./tmpl.action-readonly.yaml.j2" %}{% endfilter %} 
+

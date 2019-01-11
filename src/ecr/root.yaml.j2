@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: ''
+
+# Parameters:
+  # nothing.
+
+Resources:
+
+  # Repositories
+  {% filter indent(2) %}{% include "./tmpl.repositories.yaml.j2" %}{% endfilter %}
+
+# Outputs:
+  # nothing.
