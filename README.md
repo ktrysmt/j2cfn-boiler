@@ -7,7 +7,6 @@
 * awscli and credentials
 * make
 * python (python3 recommended)
-* nodejs (stable:v8 recommended)
 
 ## Directory structure
 
@@ -27,7 +26,7 @@
 
 ### 1. Setup
 
-Install cfn-lint and jinja2.
+Install dependencies (cfn-lint, python-dotenv and jinja2).
 
 ```
 make setup
