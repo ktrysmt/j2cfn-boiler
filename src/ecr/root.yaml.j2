@@ -8,7 +8,7 @@ Description: ''
 Resources:
 
   # Repositories
-  {% filter indent(2) %}{% include "./tmpl.repositories.yaml.j2" %}{% endfilter %}
+  {% filter indent(2) %}{% include dirname + "/tmpl.repositories.yaml.j2" %}{% endfilter %}
 
 # Outputs:
   # nothing.

@@ -8,20 +8,20 @@ Description: ''
 Resources:
 
   # User
-  {% filter indent(2) %}{% include "./tmpl.user.yaml.j2" %}{% endfilter %}
+  {% filter indent(2) %}{% include dirname + "/tmpl.user.yaml.j2" %}{% endfilter %}
 
   # Group
-  {% filter indent(2) %}{% include "./tmpl.group.yaml.j2" %}{% endfilter %}
-  
+  {% filter indent(2) %}{% include dirname + "/tmpl.group.yaml.j2" %}{% endfilter %}
+
   # Addition of user to group
-  {% filter indent(2) %}{% include "./tmpl.addition.yaml.j2" %}{% endfilter %}
+  {% filter indent(2) %}{% include dirname + "/tmpl.addition.yaml.j2" %}{% endfilter %}
 
   # ManagedPolicy
-  {% filter indent(2) %}{% include "./tmpl.managed-policy.yaml.j2" %}{% endfilter %}
+  {% filter indent(2) %}{% include dirname + "/tmpl.managed-policy.yaml.j2" %}{% endfilter %}
 
   # Role
-  {% filter indent(2) %}{% include "./tmpl.role.yaml.j2" %}{% endfilter %}
-  
+  {% filter indent(2) %}{% include dirname + "/tmpl.role.yaml.j2" %}{% endfilter %}
+
   # Inline Policy
-  {% filter indent(2) %}{% include "./tmpl.inline-policy.yaml.j2" %}{% endfilter %}
-  
+  {% filter indent(2) %}{% include dirname + "/tmpl.inline-policy.yaml.j2" %}{% endfilter %}
+
