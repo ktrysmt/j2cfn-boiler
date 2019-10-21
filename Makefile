@@ -11,10 +11,7 @@ RootFile=root.yaml.j2
 ParamCreateStackFile=param.create-stack.json
 ParamCreateChangeSetFile=param.create-change-set.json
 
-setup: ## install dependencies w/ npm and python. ## -
-	@if [ "" != `which yarn` ]; then yarn; \
-		elif [ "" != `which npm` ]; then npm i; \
-		else echo "Please install nodejs."; fi
+setup: ## install dependencies w/ python. ## -
 	@if [ "" != `which pip3` ]; then pip3 install -r ./requirements.txt; \
 		elif [ "" != `which pip` ]; then pip install -r ./requirements.txt; \
 		else echo "Please install python3."; fi
