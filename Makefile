@@ -24,7 +24,7 @@ bundle: init ## bundle partial templates into one ## make bundle Target=privileg
 
 lint: init ## lint the template ## make lint Target=privileged-access
 	aws cloudformation validate-template --template-body file://dist/${Target}/$(BundleFile)
-	cfn-lint validate ./dist/${Target}/$(BundleFile)
+	cfn-lint ./dist/${Target}/$(BundleFile)
 
 create/stack: init ## call create-stack ## make create/stack Target=privileged-access
 	aws cloudformation create-stack \
